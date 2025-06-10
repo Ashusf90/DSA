@@ -1,0 +1,18 @@
+class Student{
+    String name;
+    int age;
+//    Creating constructors with prarameters is called
+    Student(String n, int a){
+        name = n;
+        age = a;
+    }
+    void display(){
+        System.out.println(name+ " is " + age + " years old");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Student s2 = new Student("Ashu", 20); //parameterised constructor is called
+        s2.display();
+    }
+}
