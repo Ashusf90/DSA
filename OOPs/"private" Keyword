@@ -1,0 +1,21 @@
+/
+class Student{
+    private String name; //private variable
+    //public setter method
+    public void setName(String n) {
+        name = n;
+    }
+    //public getter method
+    public String getName() {
+        return name;
+    }
+
+}
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student();
+        // s.name = "Ashu";  Error: name has private access
+        s.setName("Ashu"); //  Allowed
+        System.out.println(s.getName()); //  Output: Ashu
+    }
+}
