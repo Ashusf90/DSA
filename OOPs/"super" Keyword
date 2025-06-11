@@ -1,0 +1,40 @@
+Call the Parent Class Constructor
+class Animal{
+    Animal(){
+        System.out.println("Animal Constructor");
+    }
+}
+class Dog extends Animal{
+    Dog(){
+        super();// Calls Animal's constructor
+        System.out.println("Bird Constructror");
+    }
+}
+
+Access Parent Class Method
+class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        super.sound();  // Calls Animal’s sound()
+        System.out.println("Dog barks");
+    }
+}
+
+Access Parent Class Variable
+class Animal {
+    String type = "Animal";
+}
+
+class Dog extends Animal {
+    String type = "Dog";
+
+    void printType() {
+        System.out.println(super.type); // Accesses parent variable
+        System.out.println(this.type);  // Accesses current class variable
+    }
+}
