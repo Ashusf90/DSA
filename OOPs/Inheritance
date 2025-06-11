@@ -1,0 +1,29 @@
+
+class Box{
+    int length, width, height;
+    Box(int l, int w, int h){
+        length = l;
+        width = w;
+        height = h;
+    }
+    int volume(){
+        return length * width * height;
+    }
+}
+class BoxWeight extends Box{
+    int weight;
+    BoxWeight(int l, int w, int h, int wt){
+        super(l, w, h); //call to parent constructor
+        weight = wt;
+    }
+    void display(){
+        System.out.println("Volume is: " + volume());
+        System.out.println("Weight is: " + weight);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        BoxWeight b = new BoxWeight(2, 3, 4, 5);
+        b.display();
+    }
+}
