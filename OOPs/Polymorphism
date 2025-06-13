@@ -1,0 +1,26 @@
+class Shape {
+    void draw() {
+        System.out.println("Drawing a shape");
+    }
+}
+
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+class Rectangle extends Shape {
+    void draw() {
+        System.out.println("Drawing a rectangle");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Shape s1 = new Circle();     // dynamic polymorphism
+        Shape s2 = new Rectangle();  // dynamic polymorphism
+
+        s1.draw(); // Output: Drawing a circle
+        s2.draw(); // Output: Drawing a rectangle
+    }
+}
