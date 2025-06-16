@@ -1,0 +1,27 @@
+abstract class BankAccount {
+    private double balance;  // Encapsulation
+
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    abstract void withdraw(double amount); // Abstraction
+}
+
+class SavingsAccount extends BankAccount {
+    void withdraw(double amount) {
+        System.out.println("Withdrawing " + amount);
+    }
+}
+public class Main{
+    public static void main(String[] args) {
+        BankAccount acc = new SavingsAccount();
+        acc.deposit(5000);
+        System.out.println(acc.getBalance()); // 5000
+        acc.withdraw(1000);
+    }
+}
