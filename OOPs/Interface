@@ -1,0 +1,23 @@
+//1. Define the Interface
+interface Animal{
+    void sound();
+    void eat();
+}
+//Implement the Interface in class
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Bark");
+    }
+
+    public void eat() {
+        System.out.println("Dog eats bones");
+    }
+}
+//Use the Interface via the Implementing Class
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.sound(); // Output: Bark
+        d.eat();   // Output: Dog eats bones
+    }
+}
