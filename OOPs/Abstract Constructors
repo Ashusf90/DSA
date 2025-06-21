@@ -1,0 +1,12 @@
+abstract class Vehicle {
+    Vehicle() {
+        System.out.println("Vehicle constructor");
+    }
+}
+
+class Car extends Vehicle {
+    Car() {
+        super(); // Calls abstract class constructor
+        System.out.println("Car constructor");
+    }
+}
