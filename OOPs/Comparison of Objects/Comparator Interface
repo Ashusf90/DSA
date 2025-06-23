@@ -1,0 +1,31 @@
+class Student {
+    String name;
+    int marks;
+
+    Student(String name, int marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+
+    public String toString() {
+        return name + " - " + marks;
+    }
+}
+
+class SortByName implements Comparator<Student> {
+    public int compare(Student a, Student b) {
+        return a.name.compareTo(b.name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        List<Student> list = new ArrayList<>();
+        list.add(new Student("Ashu", 80));
+        list.add(new Student("Khushi", 95));
+        list.add(new Student("Gungun", 75));
+
+        Collections.sort(list, new SortByName());
+        System.out.println(list);
+    }
+}
