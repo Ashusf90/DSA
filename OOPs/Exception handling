@@ -1,0 +1,11 @@
+public class Main {
+    public static void main(String[] args) {
+        try {
+            int a = Integer.parseInt("abc"); // NumberFormatException
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid number format: " + e.getMessage());
+        } finally {
+            System.out.println("Finished handling.");
+        }
+    }
+}
