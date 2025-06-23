@@ -1,0 +1,22 @@
+class CustomArrayList {
+    private int[] data = new int[5];
+    private int size = 0;
+
+    public void add(int value) {
+        if (size == data.length) {
+            resize();
+        }
+        data[size++] = value;
+    }
+
+    private void resize() {
+        int[] newData = new int[data.length * 2];
+        for (int i = 0; i < data.length; i++)
+            newData[i] = data[i];
+        data = newData;
+    }
+
+    public int get(int index) {
+        return data[index];
+    }
+}
