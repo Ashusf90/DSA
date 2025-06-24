@@ -1,0 +1,42 @@
+class Address implements Cloneable {
+    String city;
+
+    Address(String city) {
+        this.city = city;
+    }
+
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+}
+
+class Student implements Cloneable {
+    String name;
+    Address address;
+
+    Student(String name, Address address) {
+        this.name = name;
+        this.address = address;
+    }
+
+    // Deep copy
+    public Object clone() throws CloneNotSupportedException {
+        Student cloned = (Student) super.clone();
+        cloned.address = (Address) address.clone();  // Deep copy of nested object
+        return cloned;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) throws CloneNotSupportedException {
+        Address addr = new Address("Delhi");
+        Student s1 = new Student("Ashu", addr);
+        Student s2 = (Student) s1.clone();  // Deep copy
+
+        s2.name = "Khushi";
+        s2.address.city = "Mumbai";  // Only s2 is affected
+
+        System.out.println(s1.name + " lives in " + s1.address.city);  // Ashu lives in Delhi
+        System.out.println(s2.name + " lives in " + s2.address.city);  // Khushi lives in Mumbai
+    }
+}
