@@ -1,0 +1,20 @@
+class CustomException extends Exception {
+    CustomException(String message) {
+        super(message);
+    }
+}
+
+class ThrowThrowsExample {
+    public static void validate(int age) throws CustomException {
+        if (age < 18)
+            throw new CustomException("Age is below 18");
+    }
+
+    public static void main(String[] args) {
+        try {
+            validate(16);
+        } catch (CustomException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+}
