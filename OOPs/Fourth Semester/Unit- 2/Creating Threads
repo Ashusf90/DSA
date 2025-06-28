@@ -1,0 +1,28 @@
+////Creating Threads
+////1. By Extending Thread class
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Running thread");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        t1.start();
+    }
+}
+////2. By Implementing Runnable Interface
+//
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Runnable thread");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new MyRunnable());
+        t1.start();
+    }
+}
