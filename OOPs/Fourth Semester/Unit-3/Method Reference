@@ -1,0 +1,12 @@
+import java.util.List;
+import java.util.Arrays;
+class MethodRefExample {
+    public static void printMessage(String msg) {
+        System.out.println(msg);
+    }
+
+    public static void main(String[] args) {
+        List<String> list = Arrays.asList("Java", "Python", "C++");
+        list.forEach(MethodRefExample::printMessage);
+    }
+}
