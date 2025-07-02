@@ -1,0 +1,10 @@
+    import java.util.Base64;
+class Base64Example {
+    public static void main(String[] args) {
+        String original = "Java";
+        String encoded = Base64.getEncoder().encodeToString(original.getBytes());
+        String decoded = new String(Base64.getDecoder().decode(encoded));
+        System.out.println("Encoded: " + encoded);
+        System.out.println("Decoded: " + decoded);
+    }
+}
