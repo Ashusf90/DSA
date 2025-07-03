@@ -1,0 +1,10 @@
+class DiamondAnonDemo {
+    public static void main(String[] args) {
+        Consumer<String> consumer = new Consumer<>() {
+            public void accept(String s) {
+                System.out.println(s);
+            }
+        };
+        consumer.accept("Hello with Diamond");
+    }
+}
