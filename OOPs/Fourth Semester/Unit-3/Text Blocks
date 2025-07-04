@@ -1,0 +1,10 @@
+class TextBlockDemo {
+    public static void main(String[] args) {
+        String html = """
+            <html>
+                <body>Hello</body>
+            </html>
+            """;
+        System.out.println(html);
+    }
+}
