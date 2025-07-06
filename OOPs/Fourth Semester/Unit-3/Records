@@ -1,0 +1,7 @@
+record Person(String name, int age) {}
+class RecordDemo {
+    public static void main(String[] args) {
+        Person p = new Person("Ashu", 22);
+        System.out.println(p);
+    }
+}
