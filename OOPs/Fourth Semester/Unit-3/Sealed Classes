@@ -1,0 +1,10 @@
+sealed class Vehicle2 permits Car2, Truck {}
+final class Car2 extends Vehicle2 {}
+final class Truck extends Vehicle2 {}
+
+class SealedDemo {
+    public static void main(String[] args) {
+        Vehicle2 v = new Car2();
+        System.out.println("Vehicle created: " + v.getClass().getSimpleName());
+    }
+}
