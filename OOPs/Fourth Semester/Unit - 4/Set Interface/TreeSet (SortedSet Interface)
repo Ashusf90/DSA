@@ -1,0 +1,10 @@
+
+class TreeSetExample {
+    public static void main(String[] args) {
+        SortedSet<Integer> treeSet = new TreeSet<>();
+        treeSet.add(30);
+        treeSet.add(10);
+        treeSet.add(20);
+        System.out.println("TreeSet: " + treeSet);
+    }
+}
