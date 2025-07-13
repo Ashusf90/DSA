@@ -1,0 +1,9 @@
+
+//class TreeMapExample {
+//    public static void main(String[] args) {
+//        Map<String, Integer> tmap = new TreeMap<>();
+//        tmap.put("B", 20);
+//        tmap.put("A", 10);
+//        System.out.println("TreeMap: " + tmap);
+//    }
+//}
