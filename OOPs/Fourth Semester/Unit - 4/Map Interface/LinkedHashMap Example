@@ -1,0 +1,9 @@
+
+class LinkedHashMapExample {
+    public static void main(String[] args) {
+        Map<String, Integer> lmap = new LinkedHashMap<>();
+        lmap.put("One", 1);
+        lmap.put("Two", 2);
+        System.out.println("LinkedHashMap: " + lmap);
+    }
+}
