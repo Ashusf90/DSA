@@ -1,0 +1,9 @@
+
+class HashtableExample {
+    public static void main(String[] args) {
+        Hashtable<String, String> ht = new Hashtable<>();
+        ht.put("Admin", "1234");
+        ht.put("User", "abcd");
+        System.out.println("Hashtable: " + ht);
+    }
+}
