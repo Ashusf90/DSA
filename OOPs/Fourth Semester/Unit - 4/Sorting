@@ -1,0 +1,14 @@
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(5, 1, 4, 2, 3);
+
+        Collections.sort(numbers); // Ascending
+        System.out.println("Ascending: " + numbers);
+
+        Collections.sort(numbers, Collections.reverseOrder()); // Descending
+        System.out.println("Descending: " + numbers);
+    }
+}
