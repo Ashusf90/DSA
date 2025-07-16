@@ -1,0 +1,24 @@
+
+class Student implements Comparable<Student> {
+    int id;
+    String name;
+    Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    public int compareTo(Student s) {
+        return this.id - s.id;
+    }
+    public String toString() {
+        return id + ": " + name;
+    }
+}
+class ComparableExample {
+    public static void main(String[] args) {
+        List<Student> list = new ArrayList<>();
+        list.add(new Student(2, "B"));
+        list.add(new Student(1, "A"));
+        Collections.sort(list);
+        System.out.println("Sorted by ID: " + list);
+    }
+}
