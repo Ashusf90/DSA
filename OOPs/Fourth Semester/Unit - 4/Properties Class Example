@@ -1,0 +1,14 @@
+
+class PropertiesExample {
+    public static void main(String[] args) throws Exception {
+        Properties props = new Properties();
+        props.setProperty("db", "mysql");
+        props.setProperty("user", "admin");
+        props.setProperty("password", "1234");
+        props.store(new FileWriter("config.properties"), "DB Config");
+
+        Properties readProps = new Properties();
+        readProps.load(new FileReader("config.properties"));
+        System.out.println("DB: " + readProps.getProperty("db"));
+    }
+}
