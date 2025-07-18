@@ -1,0 +1,15 @@
+
+class NameComparator implements Comparator<Student> {
+    public int compare(Student s1, Student s2) {
+        return s1.name.compareTo(s2.name);
+    }
+}
+class ComparatorExample {
+    public static void main(String[] args) {
+        List<Student> list = new ArrayList<>();
+        list.add(new Student(3, "Z"));
+        list.add(new Student(1, "A"));
+        Collections.sort(list, new NameComparator());
+        System.out.println("Sorted by Name: " + list);
+    }
+}
