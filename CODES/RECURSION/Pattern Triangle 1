@@ -9,16 +9,16 @@ public class Main {
         triange(5,0);
 
     }
-    static void triange(int r, int c){
-        if(r==0){
+    static void triange(int row, int column){
+        if(row==0){
             return;
         }
-        if(c<r){
+        if(column<row){
             System.out.print(" * ");
-            triange(r, c+1);
+            triange(row, column+1);
         } else{
             System.out.println();
-            triange(r-1, 0);
+            triange(row-1, 0);
         }
     }
 }
