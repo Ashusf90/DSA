@@ -1,0 +1,26 @@
+ * 
+ *  * 
+ *  *  * 
+ *  *  *  * 
+ *  *  *  *  * 
+
+public class Main {
+    public static void main(String[] args) {
+        triange(5,0);
+
+    }
+    static void triange(int r, int c){
+        if(r==0){
+            return;
+        }
+        if(c<r){
+
+            triange(r, c+1);
+            System.out.print(" * ");
+        } else{
+
+            triange(r-1, 0);
+            System.out.println();
+        }
+    }
+}
