@@ -9,13 +9,13 @@ public class Main {
         triange(5,0);
 
     }
-    static void triange(int r, int c){
-        if(r==0){
+    static void triange(int row, int column){
+        if(row==0){
             return;
         }
-        if(c<r){
+        if(column<row){
 
-            triange(r, c+1);
+            triange(row, column+1);
             System.out.print(" * ");
         } else{
 
