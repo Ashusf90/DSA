@@ -10,7 +10,6 @@ public class data {
         arr[first] = arr[second];
         arr[second] = temp;
     }
-
     static void sort(int[] arr){
         int i = 0;
         while (i<arr.length){
