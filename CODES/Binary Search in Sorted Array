@@ -28,7 +28,6 @@ public class data {
         int cols = matrix[0].length;
         if (rows==1){
             return binarySearch(matrix, 0,0, cols-1, target);
-
         }
         int rStart=0;
         int rEnd = rows-1;
@@ -50,9 +49,6 @@ public class data {
         if (matrix[rStart+1][cMid]==target){
             return new int[]{rStart+1, cMid};
         }
-
-
-
         if (target<=matrix[rStart][cMid-1]) {
             return binarySearch(matrix, rStart, 0, cMid-1, target);
         }
