@@ -1,0 +1,14 @@
+public class Main {
+    public static void main(String[] args) {
+        int a = 5, b = 8;
+        swapAndPrint(a, b);  // Will only print swapped values
+        System.out.println("After swap (original): a = " + a + ", b = " + b); // a and b remain the same
+    }
+
+    static void swapAndPrint(int a, int b) {
+        int temp = a;
+        a = b;
+        b = temp;
+        System.out.println("Inside function (swapped): a = " + a + ", b = " + b);
+    }
+}
