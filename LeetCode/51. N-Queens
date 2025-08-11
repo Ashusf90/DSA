@@ -1,0 +1,50 @@
+class Solution {
+    public List<List<String>> solveNQueens(int n) {
+        List<List<String>> res = new ArrayList<>();
+        boolean[][] board = new boolean[n][n];
+        placeQueens(board, 0, res);
+        return res;
+    }
+
+    private void placeQueens(boolean[][] board, int row, List<List<String>> res) {
+        if (row == board.length) {
+            res.add(construct(board));
+            return;
+        }
+        for (int col = 0; col < board.length; col++) {
+            if (isSafe(board, row, col)) {
+                board[row][col] = true;
+                placeQueens(board, row + 1, res);
+                board[row][col] = false; // backtrack
+            }
+        }
+    }
+
+    private boolean isSafe(boolean[][] board, int row, int col) {
+        // check vertical
+        for (int i = 0; i < row; i++) {
+            if (board[i][col]) return false;
+        }
+        // check left diagonal
+        for (int i = 1; row - i >= 0 && col - i >= 0; i++) {
+            if (board[row - i][col - i]) return false;
+        }
+        // check right diagonal
+        for (int i = 1; row - i >= 0 && col + i < board.length; i++) {
+            if (board[row - i][col + i]) return false;
+        }
+        return true;
+    }
+
+    private List<String> construct(boolean[][] board) {
+        List<String> path = new ArrayList<>();
+        for (boolean[] row : board) {
+            StringBuilder sb = new StringBuilder();
+            for (boolean cell : row) {
+                sb.append(cell ? 'Q' : '.');
+            }
+            path.add(sb.toString());
+        }
+        return path;
+    }
+}
