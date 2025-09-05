@@ -1,0 +1,30 @@
+class Solution {
+    public boolean rotateString(String s1, String s2) {
+        if(s1.length()!=s2.length()) return false;
+        return kmp(s1+s1, s2);
+        
+    }
+    private boolean kmp(String text, String pat){
+        int n = text.length(), m = pat.length(), i=0,j=0;
+        int[] lps = new int[m];
+        int len =0;
+        for(int a = 1; a<m;){
+            if(pat.charAt(a)==pat.charAt(len)) lps[a++]=++len;
+            else if(len!=0)len=lps[len-1];
+            else lps[a++]=0;
+            
+        }
+        while(i<n){
+            if(text.charAt(i)==pat.charAt(j)){
+                i++;
+                j++;
+                if(j==m){
+                    return true;
+                }
+            }
+            else if (j!=0) j=lps[j-1];
+            else i++;
+        }
+        return false;
+    }
+}
