@@ -1,0 +1,157 @@
+
+public class Main {
+    public static void main(String[] args) {
+        LL list  = new LL();
+        list.insertFirst(3);
+        list.insertFirst(2);
+        list.insertFirst(8);
+        list.insertFirst(17);
+        list.insertFirst(6);
+        list.insertlast(99);
+        list.insertRandom(100,3);
+        list.display();
+        System.out.println("Deleted item = " + list.deleteFirst());
+        list.display();
+        System.out.println(list.deleteLast());
+        list.display();
+        System.out.println(list.delete(2));
+        list.display();
+
+    }
+    private LL.Node head;
+    private LL.Node tail;
+    private int size;
+    public void LL(){
+        this.size = 0;
+    }
+
+    //    Insert the element at first index
+    public void insertFirst(int val){
+        LL.Node node = new LL.Node(val);
+        node.next = head;
+        head = node;
+        if (tail == null){
+            tail = head;
+        }
+        size+=1;
+    }
+//    Insert the element at last index
+
+    public void insertlast(int val){
+        if (tail == null){
+            insertFirst(val);
+            return;
+        }
+        LL.Node node = new LL.Node(val);
+        tail.next = node;
+        tail = node;
+        size++;
+
+    }
+    //    Insert the element at random index
+
+    public void insertRandom(int val, int index){
+        if (index == 0){
+            insertFirst(val);
+            return;
+        }
+        if (index == size){
+            insertlast(val);
+            return;
+        }
+        LL.Node temp = head;
+        for (int i = 1; i < index; i++) {
+            temp = temp.next;
+
+        }
+        LL.Node node = new LL.Node(val, temp.next);
+        temp.next = node;
+        size++;
+    }
+
+    //    Delete the element at last index
+
+
+    public int deleteLast(){
+        if (size<=1){
+            return deleteFirst();
+        }
+        LL.Node secondLast = get(size-2);
+        int val = secondLast.next.value; ;
+        tail = secondLast;
+        tail.next = null;
+        return val;
+    }
+    //    Delete the element
+
+
+    public LL.Node find(int value){
+        LL.Node node = head;
+        while (node != null){
+            if(node.value == value){
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+
+
+    }
+//    Delete the element at random index
+
+    public LL.Node get(int index){
+        LL.Node node = head;
+        for (int i = 0; i < index; i++) {
+            node = node.next;
+        }
+        return node;
+
+
+    }
+
+    //    Delete the element at last index
+
+    public int deleteFirst(){
+        int val = head.value;
+        head = head.next;
+        if (head == null){
+            tail = null;
+        }
+        size--;
+        return val;
+
+    }
+    public int delete(int index){
+        if (index==0){
+            return deleteFirst();
+        }
+        if(index ==size-1){
+            deleteFirst();
+        }
+        LL.Node prev = get(index - 1);
+        int val = prev.next.value;
+        prev.next = prev.next.next;
+        return val;
+
+
+    }
+    public void display(){
+        LL.Node temp = head;
+        while (temp!=null){
+            System.out.print(temp.value + "->");
+            temp = temp.next;
+        }
+        System.out.print("END");
+    }
+    private class Node{
+        private int value;
+        private LL.Node next;
+        public Node(int value){
+            this.value = value;
+        }
+        public Node(int value, LL.Node next){
+            this.value = value;
+            this.next = next;
+        }
+    }
+}
