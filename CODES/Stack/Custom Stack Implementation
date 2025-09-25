@@ -1,0 +1,69 @@
+//Custom Stack Implementation
+public class Main {
+    protected int[] data;
+    private static final int DEFAULT_SIZE = 10;
+
+    int ptr = -1;
+    public Main(){
+        this(DEFAULT_SIZE);
+    }
+    public Main(int size) {
+        this.data = new int[size];
+    }
+    public boolean push(int item){
+        if (isFull()){
+            System.out.println("Stack is full");
+            return false;
+        }
+        ptr++;
+        data[ptr]=item;
+        return true;
+    }
+
+    private boolean isFull() {
+        return ptr==data.length-1;
+
+    }
+
+
+    public int pop() throws Exception{
+       if (isEmpty()){
+           throw new Exception("Can't pop");
+       }
+       return data[ptr--];
+    }
+
+    private boolean isEmpty() {
+        return ptr==-1;
+    }
+
+    public int peek() throws Exception {
+        if (isEmpty()) {
+            throw new Exception("Can't peek");
+        }
+        return data[ptr];
+    }
+
+    public static void main(String[] args) {
+        try {
+            Main stack = new Main(5);
+            stack.push(34);
+            stack.push(23);
+            stack.push(54);
+            stack.push(11);
+            stack.push(65);
+
+            System.out.println("Top element: " + stack.peek());
+
+            System.out.println("Popped: " + stack.pop());
+            System.out.println("Popped: " + stack.pop());
+
+            System.out.println("Top element now: " + stack.peek());
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+}
