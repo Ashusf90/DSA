@@ -1,0 +1,24 @@
+class Solution {
+    public int longestBalanced(String s) {
+        int n = s.length(), max = 0;
+        for (int i = 0; i < n; i++) {
+            int[] f = new int[26];
+            for (int j = i; j < n; j++) {
+                f[s.charAt(j) - 'a']++;
+                if (balanced(f)) max = Math.max(max, j - i + 1);
+            }
+        }
+        return max;
+    }
+
+    private boolean balanced(int[] f) {
+        int c = 0;
+        for (int x : f) {
+            if (x > 0) {
+                if (c == 0) c = x;
+                else if (x != c) return false;
+            }
+        }
+        return true;
+    }
+}
