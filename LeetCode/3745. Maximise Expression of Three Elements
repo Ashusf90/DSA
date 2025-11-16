@@ -1,0 +1,10 @@
+class Solution {
+    public int maximizeExpressionOfThree(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length-1;
+        int sum=nums[n]+nums[n-1];
+        int res =sum-nums[0];
+        return res;
+        
+    }
+}
