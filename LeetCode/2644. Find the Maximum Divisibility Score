@@ -1,0 +1,19 @@
+class Solution {
+    public int maxDivScore(int[] nums, int[] divisors) {
+        int ans = Integer.MAX_VALUE;
+        int mcount = 0;
+        for(int div:divisors){
+            int count=0;
+            for(int n:nums){
+                if(n%div==0){
+                    count++;
+                }
+            }
+            if(count>mcount || (count==mcount&&div<ans)){
+                mcount = count;
+                ans =div;
+            }
+        }
+        return ans;
+    }
+}
