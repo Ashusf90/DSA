@@ -1,0 +1,22 @@
+class Solution {
+    public int missingMultiple(int[] nums, int k) {
+        Arrays.sort(nums);
+        
+        int cur = k;
+        int n = nums.length;
+        int i = 0;
+
+        while (true) {
+            while (i < n && nums[i] < cur) i++;
+
+            if (i < n && nums[i] == cur) {
+                cur += k;  
+                i++;      
+            } 
+            else {
+                
+                return cur;
+            }
+        }
+    }
+}
