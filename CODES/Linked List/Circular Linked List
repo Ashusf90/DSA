@@ -1,7 +1,6 @@
 package com.ashu;
 
 public class CLL {
-
     private Node head;
     private Node tail;
 
