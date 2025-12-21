@@ -1,0 +1,22 @@
+class Solution {
+    public int countPartitions(int[] nums) {
+        int count=0;
+        int sum1=0;   
+        int sum=0;   
+
+        for(int i:nums) {
+            sum1+=i;
+        }
+
+        for (int j=0;j<nums.length-1;j++) {
+            sum += nums[j];              
+            int rightSum=sum1-sum;  
+
+            if ((sum - rightSum) % 2 == 0) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+}
