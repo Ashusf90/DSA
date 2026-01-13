@@ -36,8 +36,7 @@ class Solution{
             queue.add(left.right);
             queue.add(right.left);
             
-        }
-            return true;
+        }return true;
 
 
 
