@@ -3,7 +3,7 @@ class Solution {
         List<Boolean> answer = new ArrayList<>();
         int rem = 0;
 
-        for (int n:nums) {
+        for (int n:nums){
             rem = (rem * 2 + n) % 5;
             answer.add(rem == 0);
         }
