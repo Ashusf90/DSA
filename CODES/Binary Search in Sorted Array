@@ -6,7 +6,6 @@ public class data {
                 {7, 8, 9}
         };
         System.out.println(Arrays.toString(search(arr, 6)));
-
     }
     static int[] binarySearch(int[][] matrix, int row, int cStart, int cEnd, int target){
         while(cStart<=cEnd){
