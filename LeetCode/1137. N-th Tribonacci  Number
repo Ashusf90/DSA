@@ -14,8 +14,6 @@ class Solution {
             a=b;
             b=c;
             c=temp;
-
-
         }
         return c;
     }
