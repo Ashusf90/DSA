@@ -2,7 +2,6 @@ class Solution {
     public int minLengthAfterRemovals(String s) {
 
         String res = s;
-
         int countA = 0;
         int countB = 0;
 
