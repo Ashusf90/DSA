@@ -4,8 +4,6 @@ public class data {
         int target = 4;
         int ans = orderAgnosticbs(arr, target);
         System.out.println(ans);
-
-
     }
     static int orderAgnosticbs(int[] arr, int target){
         int start = 0;
