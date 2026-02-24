@@ -21,7 +21,6 @@ class Solution{
        }
        Deque<TreeNode> queue = new LinkedList<>();
        queue.offer(root);
-
        boolean reverse = false;
        while(!queue.isEmpty()){
 
