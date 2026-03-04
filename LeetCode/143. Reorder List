@@ -25,7 +25,7 @@ class Solution {
                 next = next. next;
             }
         }
-        return prev;
+        return prev; 
     }
     public ListNode middleNode (ListNode head) {
         ListNode s = head;
