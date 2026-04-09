@@ -1,0 +1,8 @@
+class Solution {
+    public long removeZeros(long n) {
+        String s = String.valueOf(n);
+        String result = s.replace("0", "");
+        if (result.isEmpty()) return 0;
+        return Long.parseLong(result);
+    }
+}
