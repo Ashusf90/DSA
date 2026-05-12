@@ -8,7 +8,7 @@ class Solution {
         if (current.length() == 2 * n) {
             result.add(current);
             return;
-        }
+        } 
         if (open < n) {
             backtrack(result, current + "(", open + 1, close, n);
         }
