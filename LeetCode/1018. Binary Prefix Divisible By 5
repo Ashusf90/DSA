@@ -5,7 +5,7 @@ class Solution {
         for (int n:nums){ 
             rem=(rem*2 + n) % 5;
             answer.add(rem == 0);
-        }
+        } 
         return answer;
     }
 }
