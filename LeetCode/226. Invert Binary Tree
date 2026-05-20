@@ -14,7 +14,7 @@
  * }
  */
  //Founder of HomeBrew who was rejected by Google b/c he cant solve this question
-class Solution {
+class Solution { 
     public TreeNode invertTree(TreeNode root) {
         if(root == null){
             return null;
