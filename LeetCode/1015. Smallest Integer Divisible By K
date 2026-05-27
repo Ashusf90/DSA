@@ -6,7 +6,7 @@ class Solution {
             if(rem==0){
                 return i;
             }
-        }
+        } 
         return -1;
     }
 }
