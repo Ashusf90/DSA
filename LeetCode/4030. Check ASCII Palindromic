@@ -1,0 +1,8 @@
+class Solution {
+    public boolean isPalindromic(String s) {
+        String t = "";
+        for (char c : s.toCharArray())
+            t += String.format("%8s", Integer.toBinaryString(c)).replace(' ', '0');
+        return t.equals(new StringBuilder(t).reverse().toString());
+    }
+}
